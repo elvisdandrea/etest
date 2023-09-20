@@ -10,8 +10,8 @@ export class UserService {
     private userRepository: typeof Users
   ) {}
 
-  async create(createUser): Promise<Users> {
-    return await this.userRepository.create<Users>(createUser);
+  async create(createUser: CreateUserDto): Promise<Users> {
+    return await this.userRepository.create<Users>(createUser as Users);
   }
 
   async findAll() {
@@ -22,8 +22,11 @@ export class UserService {
     return `This action returns a #${id} user`;
   }
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    let fields = {
+      name: updateUserDto.name,
+    }
+    return await this.userRepository.update(fields as Users, { where: { id: id } }); 
   }
 
   remove(id: number) {

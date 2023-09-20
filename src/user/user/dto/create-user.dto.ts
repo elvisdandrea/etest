@@ -1,7 +1,9 @@
+import { IsEmail } from "sequelize-typescript";
+
 export class CreateUserDto {
 
-    private readonly id!: Number;
-    private readonly name: string;
-    private readonly email: string;
+    public readonly id!: Number;
+    public readonly name: string;
+    public readonly email: string;
 
 }
