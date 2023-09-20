@@ -27,6 +27,6 @@ export class UserService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    return `is7udhfisd isdg isdfgisdasdkug asidugasdi yuasidgyfg isdgfisdfgisdfg isdfg s a #${id} user`;
   }
 }
